@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 require('dotenv').config();
 
 // Remove deprecated options - they're not needed in newer versions
-mongoose.connect('mongodb://127.0.0.1:27017/seaconnect') // Use 127.0.0.1 instead of localhost
+mongoose.connect(process.env.MONGO_URI)// Use 127.0.0.1 instead of localhost
 .then(() => console.log('✅ MongoDB Connected Successfully'))
 .catch(err => {
   console.error('❌ MongoDB Connection Error:', err.message);
@@ -56,7 +56,7 @@ async function createTestUser() {
       console.log('❌ No admin user found. Creating admin...');
       
       // Create admin user
-      const hashedPassword = await bcrypt.hash('Admin@123', 10);
+      const hashedPassword = await bcrypt.hash(process.env.ADMIN_PASSWORD, 10);
       
       const admin = new User({
         fullName: 'Super Admin',
@@ -82,14 +82,14 @@ async function createTestUser() {
       console.log('   Role:', testUser.role);
       
       // Update password to ensure it's correct
-      const hashedPassword = await bcrypt.hash('test123', 10);
+      const hashedPassword = await bcrypt.hash(process.env.TEST_PASSWORD, 10);
       testUser.password = hashedPassword;
       await testUser.save();
       console.log('✅ Test user password updated');
     } else {
       console.log('❌ Test user not found. Creating...');
       
-      const hashedPassword = await bcrypt.hash('test123', 10);
+      const hashedPassword = await bcrypt.hash(process.env.TEST_PASSWORD, 10);
       
       const newTestUser = new User({
         fullName: 'Test User',
@@ -121,10 +121,10 @@ async function createTestUser() {
     console.log('===========================');
     console.log('Admin Login:');
     console.log('  Email: admin@seaconnect.com');
-    console.log('  Password: Admin@123');
+    console.log('  Password: (set via environment variable)');
     console.log('\nTest User Login:');
     console.log('  Email: test@example.com');
-    console.log('  Password: test123');
+    console.log('  Password: (set via environment variable)');
     console.log('===========================');
 
   } catch (error) {

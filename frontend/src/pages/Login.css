@@ -1,0 +1,164 @@
+/* ================= OVERLAY ================= */
+
+.modal-overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.75);
+  backdrop-filter:blur(6px);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+}
+
+/* ================= MODAL CARD ================= */
+
+.modal-card{
+  background:#fff;
+  width:100%;
+  max-width:420px;
+  padding:40px 35px;
+  border-radius:16px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.25);
+  position:relative;
+  text-align:center;
+}
+
+/* ================= CLOSE BUTTON ================= */
+
+.modal-card .login-close-btn{
+  position:absolute;
+  top:12px;
+  right:12px;
+
+  width:34px;
+  height:34px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:none;
+  border-radius:50%;
+
+  font-size:18px;
+  font-weight:bold;
+
+  background:#f1f1f1;
+  color:#555;
+
+  cursor:pointer;
+  z-index:1001;
+  transition:0.25s;
+}
+
+.modal-card .login-close-btn:hover{
+  background:#e63946;
+  color:#fff;
+  transform:rotate(90deg);
+}
+
+/* ================= TITLE ================= */
+
+.modal-card h2{
+  margin-bottom:25px;
+  font-size:26px;
+  color:#023e8a;
+}
+
+/* ================= FORM ================= */
+
+.form-group{
+  margin-bottom:18px;
+  text-align:left;
+}
+
+.form-group label{
+  display:block;
+  margin-bottom:6px;
+  font-weight:600;
+  font-size:14px;
+}
+
+.form-group input{
+  width:100%;
+  padding:12px;
+  border:2px solid #e2e8f0;
+  border-radius:10px;
+  font-size:14px;
+  transition:0.2s;
+}
+
+.form-group input:focus{
+  outline:none;
+  border-color:#0077b6;
+}
+
+/* ================= BUTTON ================= */
+
+.auth-btn{
+  width:100%;
+  padding:13px;
+  background:linear-gradient(90deg,#0077b6,#0096c7);
+  color:white;
+  border:none;
+  border-radius:30px;
+  font-weight:600;
+  font-size:15px;
+  cursor:pointer;
+  margin-top:10px;
+}
+
+.auth-btn:hover{
+  background:linear-gradient(90deg,#023e8a,#0077b6);
+}
+
+/* ================= ERROR ================= */
+
+.error-message{
+  background:#fef2f2;
+  border:1px solid #fee2e2;
+  border-radius:10px;
+  padding:10px;
+  margin-bottom:18px;
+}
+
+.error-message p{
+  margin:0;
+  color:#dc2626;
+  font-size:14px;
+}
+
+/* ================= REGISTER LINK ================= */
+
+.auth-switch{
+  margin-top:20px;
+  font-size:14px;
+}
+
+.switch-link{
+  color:#0077b6;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.switch-link:hover{
+  text-decoration:underline;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:480px){
+
+.modal-card{
+  padding:30px 20px;
+}
+
+.modal-card h2{
+  font-size:22px;
+}
+
+}

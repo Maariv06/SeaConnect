@@ -1,0 +1,288 @@
+/* ================= OVERLAY ================= */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+/* ================= MODAL CARD ================= */
+
+.modal-card {
+  background: linear-gradient(135deg, #ffffff, #f1f9ff);
+  width: 100%;
+  max-width: 420px;
+  padding: 40px 35px;
+  border-radius: 18px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  animation: popup 0.3s ease;
+}
+
+.modal-card h2 {
+  margin-bottom: 25px;
+  font-size: 22px;
+  color: #023e8a;
+  font-weight: 600;
+}
+
+/* ================= CLOSE BUTTON ================= */
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #555;
+  transition: 0.3s;
+}
+
+.close-btn:hover {
+  color: #e63946;
+  transform: rotate(90deg);
+}
+
+/* ================= FORM ================= */
+
+.modal-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.modal-card input,
+.modal-card select {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #d0d7de;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.modal-card input:focus,
+.modal-card select:focus {
+  border-color: #0077b6;
+  box-shadow: 0 0 0 2px rgba(0, 119, 182, 0.2);
+  outline: none;
+}
+
+/* ================= BUTTON ================= */
+
+.modal-card button {
+  padding: 12px;
+  background: linear-gradient(90deg, #0077b6, #0096c7);
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.modal-card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 119, 182, 0.3);
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes popup {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.auth-btn {
+  width: 100%;
+  padding: 10px;
+  background: #0077b6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.auth-btn:hover {
+  background: #023e8a;
+}
+
+.auth-switch {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.switch-link {
+  color: #0077b6;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.switch-link:hover {
+  text-decoration: underline;
+  color: #023e8a;
+}
+
+.error-message {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.forgot-password {
+  text-align: right;
+  margin: 10px 0;
+}
+
+.forgot-link {
+  color: #667eea;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+.demo-credentials {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px dashed #667eea;
+}
+
+.demo-title {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.demo-credentials p {
+  margin: 5px 0;
+  font-size: 13px;
+  color: #666;
+}
+
+.demo-credentials strong {
+  color: #667eea;
+}
+
+.auth-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #333;
+  font-size: 14px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
+}
+
+.error-message {
+  background-color: #fff2f0;
+  border: 1px solid #ffccc7;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 20px;
+}
+
+.error-message p {
+  color: #f5222d;
+  margin: 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+.test-credentials {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px dashed #667eea;
+}
+
+.test-title {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.test-credentials p {
+  margin: 5px 0;
+  font-size: 13px;
+  color: #666;
+}
+
+.test-credentials strong {
+  color: #667eea;
+}
+
+.forgot-password {
+  text-align: right;
+  margin: 15px 0;
+}
+
+.forgot-link {
+  color: #667eea;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.forgot-link:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}

@@ -1,0 +1,154 @@
+/* ================= OVERLAY ================= */
+
+.modal-overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.75);
+  backdrop-filter:blur(6px);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+}
+
+/* ================= MODAL CARD ================= */
+
+.modal-card{
+  background:#ffffff;
+  width:100%;
+  max-width:420px;
+  padding:40px 35px;
+  border-radius:16px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.25);
+  position:relative;
+  text-align:center;
+  animation:popup 0.25s ease;
+}
+
+@keyframes popup{
+  from{
+    transform:scale(0.9);
+    opacity:0;
+  }
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
+}
+
+/* ================= CLOSE BUTTON ================= */
+
+.modal-card .close-btn{
+  position:absolute;
+  top:12px;
+  right:12px;
+
+  width:34px;
+  height:34px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:none;
+  border-radius:50%;
+
+  font-size:18px;
+  font-weight:bold;
+
+  background:#f1f1f1;
+  color:#555;
+
+  cursor:pointer;
+  transition:0.25s;
+}
+
+.modal-card .close-btn:hover{
+  background:#e63946;
+  color:#fff;
+  transform:rotate(90deg);
+}
+
+/* ================= TITLE ================= */
+
+.modal-card h2{
+  margin-bottom:25px;
+  font-size:26px;
+  color:#023e8a;
+}
+
+/* ================= FORM ================= */
+
+.modal-card form{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+/* ================= INPUTS ================= */
+
+.modal-card input,
+.modal-card select{
+  width:100%;
+  padding:12px 14px;
+  border:2px solid #e2e8f0;
+  border-radius:10px;
+  font-size:14px;
+  transition:0.25s;
+  box-sizing:border-box;
+}
+
+.modal-card input:focus,
+.modal-card select:focus{
+  outline:none;
+  border-color:#0077b6;
+  box-shadow:0 0 0 3px rgba(0,119,182,0.1);
+}
+
+/* ================= BUTTON ================= */
+
+.register-btn{
+  width:100%;
+  padding:13px;
+  background:linear-gradient(90deg,#0077b6,#0096c7);
+  color:white;
+  border:none;
+  border-radius:200px;
+  font-weight:600;
+  font-size:15px;
+  cursor:pointer;
+  margin-top:10px;
+  height: 45px;
+}
+
+.register-btn:hover{
+  background:linear-gradient(90deg,#023e8a,#0077b6);
+  transform:translateY(-2px);
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:480px){
+
+.modal-card{
+  padding:30px 20px;
+}
+
+.modal-card h2{
+  font-size:22px;
+}
+
+.modal-card input,
+.modal-card select{
+  font-size:13px;
+  padding:11px;
+}
+
+.register-btn{
+  padding:12px;
+}
+
+}

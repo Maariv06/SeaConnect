@@ -1,0 +1,413 @@
+/* NAVBAR MAIN CONTAINER */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 60px;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+  border-bottom: 1px solid rgba(2, 62, 138, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* LOGO */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 65px;
+  object-fit: contain;
+}
+
+/* NAV LINKS */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+  align-items: center;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a,
+.nav-link-custom,
+.dropdown-title {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: #023e8a;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-link-custom:hover,
+.dropdown-title:hover {
+  color: #0077b6;
+}
+
+/* LOGOUT BUTTON */
+.logout-btn {
+  padding: 8px 20px;
+  border: 2px solid #0077b6;
+  background: white;
+  color: #0077b6;
+  font-weight: 700;
+  font-size: 13px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: #0077b6;
+  color: white;
+}
+
+/* LOGIN BUTTONS */
+.nav-btn {
+  cursor: pointer;
+  color: #023e8a;
+}
+
+.register-btn {
+  background: #0077b6;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 5px;
+}
+
+/* CLICK DROPDOWN */
+.dropdown-menu-click {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background: white;
+  min-width: 220px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  padding: 10px 0;
+  z-index: 999;
+  animation: dropdownFade 0.25s ease-in-out;
+}
+
+.dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 18px;
+  font-weight: 600;
+  color: #023e8a;
+  border-bottom: 1px solid #eee;
+}
+
+.close-dropdown {
+  cursor: pointer;
+  font-size: 14px;
+  color: #888;
+}
+
+.close-dropdown:hover {
+  color: red;
+  transform: scale(1.2);
+}
+
+.dropdown-menu-click li {
+  list-style: none;
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #023e8a;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dropdown-menu-click li:hover {
+  background: #f0f7ff;
+  color: #0077b6;
+}
+
+/* LOGIN REQUIRED POPUP */
+.login-required-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.login-required-box {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.login-now-btn {
+  background: #0077b6;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 25px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background: #eee;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add to Navbar.css */
+.user-role-indicator {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.user-role-badge {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Dark mode support */
+.dark-mode .user-role-badge {
+  background: linear-gradient(135deg, #845ef7 0%, #5e3c9c 100%);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+.user-name {
+  font-weight: 600;
+  color: #333;
+}
+
+.role-badge {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.role-badge.seller {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.role-badge.buyer {
+  background: #e8f5e8;
+  color: #2e7d32;
+}
+
+.role-badge.admin {
+  background: #f3e5f5;
+  color: #7b1fa2;
+}
+
+/* Add at the end of your existing Navbar.css */
+
+.wallet-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.wallet-icon {
+  font-size: 1.1rem;
+}
+
+/* Update the notification icon container and icon */
+.notification-icon-container {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.notification-icon {
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: transparent;
+  position: relative;
+  color: #023e8a;
+}
+
+.notification-icon:hover {
+  transform: scale(1.05);
+  background: rgba(0, 119, 182, 0.1);
+}
+
+/* Notification badge */
+.notification-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background: linear-gradient(135deg, #ff4757, #e84118);
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 5px;
+  border-radius: 20px;
+  min-width: 18px;
+  height: 18px;
+  text-align: center;
+  line-height: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  animation: pulse 1.5s infinite;
+}
+
+/* Badge animation for new notifications */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Make sure all nav items are vertically centered */
+.nav-links li {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+}
+
+/* Ensure consistent spacing between items */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Adjust logout button to match height */
+.logout-btn {
+  padding: 6px 18px;
+  border: 2px solid #0077b6;
+  background: white;
+  color: #0077b6;
+  font-weight: 600;
+  font-size: 13px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+
+.logout-btn:hover {
+  background: #0077b6;
+  color: white;
+}
+
+/* Adjust My Activity and other nav items */
+.nav-link-custom {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0;
+}
+
+/* Wallet link alignment */
+.wallet-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.wallet-icon {
+  font-size: 16px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .nav-links {
+    gap: 20px;
+  }
+  
+  .notification-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+  
+  .nav-links {
+    gap: 15px;
+  }
+  
+  .notification-icon {
+    width: 26px;
+    height: 26px;
+    font-size: 16px;
+  }
+  
+  .notification-badge {
+    font-size: 9px;
+    min-width: 16px;
+    height: 16px;
+    line-height: 12px;
+    top: -3px;
+    right: -3px;
+  }
+}
